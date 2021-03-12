@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
     homepage = "https://www.unidata.ucar.edu/software/udunits/";
     description = "A C-based package for the programatic handling of units of physical quantities";
     license = licenses.bsdOriginal;
-    platforms = platforms.linux;
+    platforms = platforms.linux ++ platforms.darwin;
     maintainers = with maintainers; [ pSub ];
   };
 }
