@@ -50,7 +50,7 @@ stdenv.mkDerivation rec {
       --with-lapack="-L${lapack}/lib -llapack"
       --with-readline
       --with-tcltk --with-tcl-config="${tcl}/lib/tclConfig.sh" --with-tk-config="${tk}/lib/tkConfig.sh"
-      --with-cairo
+      ${lib.optionalString (!stdenv.isDarwin) "--with-cairo"}
       --with-libpng
       --with-jpeglib
       --with-libtiff
